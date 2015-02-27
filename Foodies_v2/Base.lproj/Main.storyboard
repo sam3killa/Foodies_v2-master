@@ -308,9 +308,9 @@
                                                     <color key="textColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Z3e-Ed-1lK">
-                                                    <rect key="frame" x="8" y="4" width="708" height="220"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ENL-Iv-9Sn">
+                                                    <rect key="frame" x="8" y="8" width="64" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -318,7 +318,7 @@
                                             <outlet property="addressLabel" destination="kt4-eK-FLC" id="5I6-FY-b1l"/>
                                             <outlet property="cuisineLabel" destination="Jlr-Hs-izu" id="Tbi-rt-2du"/>
                                             <outlet property="nameLabel" destination="faH-kP-1va" id="o3v-bT-04W"/>
-                                            <outlet property="restaurantImageView" destination="Z3e-Ed-1lK" id="tnJ-yg-VlB"/>
+                                            <outlet property="restaurantImageView" destination="ENL-Iv-9Sn" id="9D5-KV-OVu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -329,7 +329,7 @@
                     <navigationItem key="navigationItem" id="jyv-BV-Tgm"/>
                     <connections>
                         <outlet property="tableView" destination="1L6-Ns-xGM" id="Va7-MZ-faA"/>
-                        <segue destination="I1q-qL-pm8" kind="push" id="FD5-Qf-5Es"/>
+                        <segue destination="I1q-qL-pm8" kind="push" identifier="planSegue" id="FD5-Qf-5Es"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzn-mR-vN9" userLabel="First Responder" sceneMemberID="firstResponder"/>

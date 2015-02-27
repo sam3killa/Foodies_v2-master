@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5E56F526-CACF-4DC9-B479-80E8D048B5A2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Foodies_v2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BA4874DBE7D640A0F70E59C69E15CF9333A2BBFB</key>
+		<string>https://github.com/sam3killa/Foodies_v2-master.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Foodies_v2.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BA4874DBE7D640A0F70E59C69E15CF9333A2BBFB</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sam3killa/Foodies_v2-master.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BA4874DBE7D640A0F70E59C69E15CF9333A2BBFB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BA4874DBE7D640A0F70E59C69E15CF9333A2BBFB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Foodies_v2-master</string>
+		</dict>
+	</array>
+</dict>
+</plist>

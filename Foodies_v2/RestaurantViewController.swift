@@ -20,6 +20,11 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     let yelpToken = "y8jL57GaqK7Dkvd4Xt4LdH4taA0m4tam"
     let yelpTokenSecret = "3Ap3T8k-dGN8ttevEMUj3TkCQHw"
     
+//    required init(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
+//    
+    var restaurantDictionary: [NSDictionary] = []
     
     var r1 = [
         "name" : "DishDash",
@@ -74,13 +79,16 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         
         client = YelpClient(consumerKey: yelpConsumerKey, consumerSecret: yelpConsumerSecret, accessToken: yelpToken, accessSecret: yelpTokenSecret)
         
-        client.searchWithTerm("Thai", success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            println(response)
+        
+        client.searchWithTerm("restaurants", success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+//            println(response)
+            self.restaurantDictionary = response["businesses"] as [NSDictionary]
+            //println(self.restaurantDictionary)
+            
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 println(error)
         }
-
-        
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,14 +97,29 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return self.restaurantDictionary.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell") as RestaurantCell
-        cell.nameLabel.text = self.restaurants[indexPath.row]["name"]
-        cell.addressLabel.text = self.restaurants[indexPath.row]["address"]
-        cell.cuisineLabel.text = self.restaurants[indexPath.row]["cuisine"]
+        
+        var restaurant = restaurantDictionary[indexPath.row]
+//        println(restaurant)
+//        println(restaurant["name"])
+//        println(restaurant["location"]!["city"]!)
+//        println(restaurant["categories"]![0]!)
+//        println(restaurant["image_url"])
+        
+        
+         cell.nameLabel.text = restaurant["name"] as String
+         cell.restaurantImageView.setImageWithURL(NSURL(string: restaurant["image_url"] as String))
+         cell.addressLabel.text = restaurant["location"]!["city"]! as String
+         //cell.cuisineLabel.text = restaurant["location"]!["cross_streets"]! as String
+
+        
+//        cell.nameLabel.text = self.restaurants[indexPath.row]["name"]
+//        cell.addressLabel.text = self.restaurants[indexPath.row]["address"]
+//        cell.cuisineLabel.text = self.restaurants[indexPath.row]["cuisine"]
         
         return cell
     }
@@ -110,9 +133,15 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     }
     
 
-    
-    
-    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]?  {
+            // 1
+            var planAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Plan" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+                
+                self.performSegueWithIdentifier("planSegue", sender: nil)
+            })
+            
+        return [planAction]
+    }
 
     /*
     // MARK: - Navigation
